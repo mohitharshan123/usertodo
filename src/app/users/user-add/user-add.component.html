@@ -1,0 +1,56 @@
+<form fxFlex fxLayout="column" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+  <mat-form-field>
+    <mat-label>Id</mat-label>
+    <input formControlName="id" matInput />
+  </mat-form-field>
+  <mat-error *ngIf="userForm.get('id').touched && userForm.get('id').errors?.required">
+    Field is required
+  </mat-error>
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input formControlName="name" matInput />
+  </mat-form-field>
+  <mat-error *ngIf="userForm.get('name').touched && userForm.get('name').errors?.required">
+    Field is required
+  </mat-error>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input formControlName="email" matInput />
+  </mat-form-field>
+  <mat-error *ngIf="userForm.get('email').touched && userForm.get('email').errors?.required">
+    Field is required
+  </mat-error>
+    <mat-error *ngIf="userForm.get('email').touched && userForm.get('email').errors?.email">
+    Enter a valid email
+  </mat-error>
+  <mat-form-field>
+    <mat-label>Phone</mat-label>
+    <input formControlName="phone" matInput />
+  </mat-form-field>
+  <mat-error *ngIf="userForm.get('phone').touched && userForm.get('phone').errors?.required">
+    Field is required
+  </mat-error>
+  <mat-error *ngIf="userForm.get('phone').touched && userForm.get('phone').errors?.pattern">
+    Enter a valid number starting with +91
+  </mat-error>
+  <mat-form-field>
+    <mat-label>Website</mat-label>
+    <input formControlName="website" matInput />
+  </mat-form-field>
+  <mat-error *ngIf="userForm.get('website').touched && userForm.get('website').errors?.required">
+    Field is required
+  </mat-error>
+  <mat-form-field>
+    <mat-label>Company</mat-label>
+    <input formControlName="company" matInput />
+  </mat-form-field>
+  <mat-error *ngIf="userForm.get('email').touched && userForm.get('email').errors?.required">
+    Field is required
+  </mat-error>
+   <button (click)="dialogRef.close()" mat-button color="primary" type="submit">
+    Cancel
+  </button>
+  <button [disabled]="!userForm.valid" mat-button color="primary" type="submit">
+    Submit
+  </button>
+</form>

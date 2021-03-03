@@ -1,0 +1,19 @@
+<mat-card style="margin:20px">
+  <mat-card-header>
+    <mat-card-title>{{ userDetail?.name }}</mat-card-title>
+    <mat-card-subtitle>{{ userDetail?.username }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Email: {{ userDetail?.email }}</p>
+    <p>Phone: {{ userDetail?.phone }}</p>
+    <p>Website: {{ userDetail?.website }}</p>
+    <p>Company: {{ userDetail?.company?.name }}</p>
+    <div>
+      <p>Address:</p>
+      <span>{{ userDetail?.address?.city }},</span>
+      <span>{{ userDetail?.address?.street }},</span>
+      <span>{{ userDetail?.address?.suite }}</span>
+      <span></span>
+    </div>
+  </mat-card-content>
+</mat-card>
